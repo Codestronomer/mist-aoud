@@ -29,6 +29,35 @@
       </style>
   </head>
   <body style="background: #fafafa;">
+    <div class="navbar">
+      <a href="index.html" class="icon-area">
+        <img src="./assets/navIcon.svg" alt="Mist aoud logo" />
+        <h1 class="icon-text">Mist Aoud</h1>
+      </a>
+
+      <div class="nav-center">
+        <a href="./shop.html" class="nav-link">Shop</a>
+        <a href="./about.html" class="nav-link">Our Story</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-controls">
+        <div class="actions">
+          <div class="cart-wrapper" onclick="goToCheckout()">
+            <div class="cart-icon-container">
+              <img src="./assets/cartIcon.svg" alt="Cart" />
+              <span id="cartBadge">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-menu-btn" onclick="document.querySelector('.nav-center').classList.toggle('active')">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
     <div id="checkoutState">
         <div class="checkout-container">
             <div class="checkout-main">
