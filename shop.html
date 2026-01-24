@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mist Aoud | Shop</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+  </head>
+
+  <body style="background: #fafafa;">
+    <div class="navbar">
+      <a href="index.html" class="icon-area">
+        <img src="./assets/navIcon.svg" alt="Mist aoud logo" />
+        <div>
+          <h1 class="icon-text">
+            Mist Aoud
+          </h1>
+        </div>
+      </a>
+      <div class="nav-center">
+        <a href="./shop.html" class="nav-link">Shop</a>
+        <a href="./about.html" class="nav-link">Our Story</span>
+        <a href="#contact" class="nav-link">Contact</span>
+      </div>
+      <div class="actions">
+        <div class="cart-wrapper" onclick="goToCheckout()">
+          <span>Cart </span>
+          <div>
+            <img src="./assets/cartIcon.svg" alt="Cart" />
+            <span id="cartBadge">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page active" id="shopPage">
+      <header>
+        <h1>Signature Collection</h1>
+        <p>Discover our most beloved fragrances</p>
+      </header>
+
+      <section class="shop">
+        <div class="product">
+          <img src="./assets/ProductShowcase1.png" alt="">
+          <div class="product-content">
+            <h3>Royal Oud</h3>
+            <p>Pure oud with amber & sandalwood</p>
+            <div class="product-foot">
+              <div class="price">$189</div>
+              <button type="button" onclick="addToCart('Royal Oud',189,this)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="./assets/ProductShowcase2.png" alt="">
+          <div class="product-content">
+            <h3>Mystic Mist</h3>
+            <p>Rose, saffron & aged oud</p>
+            <div class="product-foot">
+              <div class="price">$165</div>
+              <button type="button" onclick="addToCart('Mystic Mist',165,this)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="./assets/productShowcase3.png" alt="">
+          <div class="product-content">
+            <h3>Desert Night</h3>
+            <p>Deep woody Arabian fragrance</p>
+            <div class="product-foot">
+              <div class="price">$199</div>
+              <button type="button" onclick="addToCart('Desert Night',199,this)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="./assets/ProductShowcase4.png" alt="">
+          <div class="product-content">
+            <h3>Tilo Skin</h3>
+            <p>A masjestic blend of pure oud with hints of amber and sandwood</p>
+            <div class="product-foot">
+              <div class="price">$199</div>
+              <button type="button" onclick="addToCart('Tilo Skin',199,this)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="./assets/ProductShowcase5.png" alt="">
+          <div class="product-content">
+            <h3>Black Mist</h3>
+            <p>Enchanting notes of rose, saffron, and aged oud create pure magic</p>
+            <div class="product-foot">
+              <div class="price">$165</div>
+              <button type="button" onclick="addToCart('Black Mist',165,this)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="./assets/ProductShowcase6.png" alt="">
+          <div class="product-content">
+            <h3>At Dawn</h3>
+            <p>Deep woody fragrance inspired by Arabian nights under the stars</p>
+            <div class="product-foot">
+              <div class="price">$199</div>
+              <button type="button" onclick="addToCart('At Dawn',199,this)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-brand">
+            <h3>Mist Aoud</h3>
+            <p>
+              Crafting extraordinary fragrances that honor the ancient art of oud
+              perfumery since 1998. Experience timeless luxury in every bottle.
+            </p>
+
+            <img src="./assets/decoLine.svg" alt="line" />
+
+            <ul class="footer-contact" id="contact">
+              <li>
+                <span><img src="./assets/mailIcon.svg" alt="mail icon" /></span>
+                <a href="mailto:hello@mistaoud.com">hello@mistaoud.com</a>
+              </li>
+              <li>
+                <span><img src="./assets/phoneIcon.svg" alt="phone icon" /></span>
+                <a href="tel:+97144567890">+971 4 456 7890</a>
+              </li>
+              <li>
+                <span><img src="./assets/pinIcon.svg" alt="location" /></span>
+                Dubai, United Arab Emirates
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#">All Products</a></li>
+              <li><a href="#">Signature Collection</a></li>
+              <li><a href="#">Limited Editions</a></li>
+              <li><a href="#">Gift Sets</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4>About</h4>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Craftsmanship</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Mist Aoud. All rights reserved.</p>
+
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <img src="./assets/instagramIcon.svg" alt="instagram" />
+            </a>
+            <a href="#" aria-label="Facebook">
+              <img src="./assets/faceebookIcon.svg" alt="Facebook" />
+            </a>
+            <a href="#" aria-label="Twitter">
+              <img src="./assets/twitterIcon.svg" alt="Twitter" />
+            </a>
+          </div>
+
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  <script src="shop.js"></script>
+  </body>
+</html>

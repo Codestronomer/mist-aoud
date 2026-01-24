@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Mist Aoud</title>
+
+  <link rel="stylesheet" href="global.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #f5b642;
+      --text-light: rgba(255, 255, 255, 1);
+      --text-muted: rgba(255, 255, 255, 1);
+      --bg-dark: #2a1a12;
+      --card-bg: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Layout */
+    .about-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    /* Image */
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+      /* box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);   */
+    }
+
+    /* Content */
+    .about-content small {
+      display: inline-block;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    .about-content h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      margin-bottom: 24px;
+      color: var(--text-light);
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      max-width: 520px;
+    }
+
+    /* Highlights */
+    .about-highlights {
+      display: flex;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .highlight-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 20px 24px;
+      min-width: 220px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .highlight-card h3 {
+      color: var(--gold);
+      font-size: 20px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .highlight-card span {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .about-content h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="icon-area">
+      <a href="index.html" class="icon-area">
+        <img src="./assets/navIcon.svg" alt="Mist aoud logo" />
+        <div>
+          <h1 class="icon-text">
+            Mist Aoud
+          </h1>
+        </div>
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="./shop.html" class="nav-link">Shop</a>
+      <!-- <a href="" class="nav-link">Collections</span> -->
+      <a href="./about.html" class="nav-link">Our Story</span>
+      <a href="#contact" class="nav-link">Contact</span>
+    </div>
+    <div class="actions">
+      <div class="cart-wrapper" onclick="goToCheckout()">
+        <span>Cart </span>
+        <div>
+          <img src="./assets/cartIcon.svg" alt="Cart" />
+          <span id="cartBadge">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="about-page">
+    <section class="about-container">
+
+      <!-- Image Section -->
+      <div class="about-image">
+        <!-- Replace src with your actual image path -->
+        <img src="./assets/aboutUs.png" alt="Traditional Middle Eastern craftsmanship">
+      </div>
+
+      <!-- Content Section -->
+      <div class="about-content">
+        <small>OUR HERITAGE</small>
+        <h1>Rooted in Tradition, Crafted for Eternity</h1>
+
+        <p>
+          For over 25 years, Mist Aoud has been crafting extraordinary fragrances
+          that honor the ancient art of oud perfumery. Our journey began in the
+          heart of the Middle East, where master perfumers taught us the sacred
+          traditions of scent creation.
+        </p>
+
+        <p>
+          Today, we continue to source the finest oud from sustainable forests,
+          ensuring each bottle carries not just a fragrance, but a piece of
+          history. Our commitment to authenticity and quality has made us a
+          trusted name among fragrance connoisseurs worldwide.
+        </p>
+
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <h3>Est. 1998</h3>
+            <span>Founded with passion</span>
+          </div>
+
+          <div class="highlight-card">
+            <h3>100% Pure</h3>
+            <span>Authentic oud oil</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h3>Mist Aoud</h3>
+          <p>
+            Crafting extraordinary fragrances that honor the ancient art of oud
+            perfumery since 1998. Experience timeless luxury in every bottle.
+          </p>
+
+          <img src="./assets/decoLine.svg" alt="line" />
+
+          <ul class="footer-contact" id="contact">
+            <li>
+              <span><img src="./assets/mailIcon.svg" alt="mail icon" /></span>
+              <a href="mailto:hello@mistaoud.com">hello@mistaoud.com</a>
+            </li>
+            <li>
+              <span><img src="./assets/phoneIcon.svg" alt="phone icon" /></span>
+              <a href="tel:+97144567890">+971 4 456 7890</a>
+            </li>
+            <li>
+              <span><img src="./assets/pinIcon.svg" alt="location" /></span>
+              Dubai, United Arab Emirates
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">All Products</a></li>
+            <li><a href="#">Signature Collection</a></li>
+            <li><a href="#">Limited Editions</a></li>
+            <li><a href="#">Gift Sets</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>About</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Craftsmanship</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Mist Aoud. All rights reserved.</p>
+
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <img src="./assets/instagramIcon.svg" alt="instagram" />
+          </a>
+          <a href="#" aria-label="Facebook">
+            <img src="./assets/faceebookIcon.svg" alt="Facebook" />
+          </a>
+          <a href="#" aria-label="Twitter">
+            <img src="./assets/twitterIcon.svg" alt="Twitter" />
+          </a>
+        </div>
+
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <span>|</span>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+</body>
+<script src="shop.js"></script>
+</html>

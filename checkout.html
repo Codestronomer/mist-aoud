@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Checkout | Mist Aoud</title>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="global.css">
+      <style>
+          .checkout-container {
+              max-width: 1100px;
+              margin: 60px auto;
+              padding: 0 20px;
+              display: grid;
+              grid-template-columns: 1fr 380px;
+              gap: 40px;
+          }
+          @media (max-width: 768px) {
+              .checkout-container { grid-template-columns: 1fr; }
+          }
+          .checkout-main section { background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+          h3 { font-family: "Playfair Display", serif; margin-top: 0; }
+          input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: Inter; }
+          .order-summary { background: #f8f8f8; padding: 25px; border-radius: 15px; height: fit-content; position: sticky; top: 20px; }
+          .cart-item { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 14px; }
+          .checkout-btn { background: var(--gold, #c57c3d); color: white; border: none; padding: 16px; width: 100%; border-radius: 30px; font-size: 16px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+          .checkout-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+          #successState { display: none; text-align: center; padding: 100px 20px; }
+      </style>
+  </head>
+  <body style="background: #fafafa;">
+    <div id="checkoutState">
+        <div class="checkout-container">
+            <div class="checkout-main">
+                <a href="shop.html" style="text-decoration: none; color: #c57c3d; display: inline-block; margin-bottom: 20px;">← Back to Shop</a>
+                <form id="orderForm">
+                    <section>
+                        <h3>1. Shipping Information</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <input required placeholder="First Name">
+                            <input required placeholder="Last Name">
+                        </div>
+                        <input required placeholder="Street Address">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                            <input required placeholder="City">
+                            <input required placeholder="State">
+                            <input required placeholder="ZIP Code">
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>2. Payment Details</h3>
+                        <input required placeholder="Cardholder Name">
+                        <input required placeholder="Card Number">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <input required placeholder="MM/YY">
+                            <input required placeholder="CVV">
+                        </div>
+                    </section>
+                    <button type="submit" class="checkout-btn" id="payBtn">Complete Purchase</button>
+                </form>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="cartItemsList"></div>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <span>Subtotal</span>
+                    <span id="subtotalPrice">$0</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                    <span>Shipping</span>
+                    <span style="color: green;">FREE</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 20px; margin-top: 15px;">
+                    <span>Total</span>
+                    <span id="totalPrice">$0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="successState">
+        <h2 style="font-family: 'Playfair Display'; color: #c57c3d; font-size: 40px;">Order Placed!</h2>
+        <p>Thank you for choosing Mist Aoud. Your fragrance will arrive soon ✨</p>
+        <a href="shop.html" class="checkout-btn" style="display: inline-block; width: auto; padding: 12px 30px; text-decoration: none; margin-top: 20px;">Continue Shopping</a>
+    </div>
+  </body>
+  <script src="./shop.js"></script>
+</html>
