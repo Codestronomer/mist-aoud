@@ -11,22 +11,25 @@
     <div class="navbar">
       <a href="index.html" class="icon-area">
         <img src="./assets/navIcon.svg" alt="Mist aoud logo" />
-        <div>
-          <h1 class="icon-text">
-            Mist Aoud
-          </h1>
-        </div>
+        <h1 class="icon-text">Mist Aoud</h1>
       </a>
+
+      <div class="mobile-menu-btn" onclick="document.querySelector('.nav-center').classList.toggle('active')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <div class="nav-center">
         <a href="./shop.html" class="nav-link">Shop</a>
-        <!-- <a href="" class="nav-link">Collections</span> -->
-        <a href="./about.html" class="nav-link">Our Story</span>
-        <a href="#contact" class="nav-link">Contact</span>
+        <a href="./about.html" class="nav-link">Our Story</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
+
       <div class="actions">
         <div class="cart-wrapper" onclick="goToCheckout()">
-          <span>Cart </span>
-          <div>
+          <span class="cart-label">Cart</span>
+          <div class="cart-icon-container">
             <img src="./assets/cartIcon.svg" alt="Cart" />
             <span id="cartBadge">0</span>
           </div>

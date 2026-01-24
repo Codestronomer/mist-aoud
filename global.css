@@ -901,3 +901,119 @@ header h1 {
 header p {
   color: var(--muted);
 }
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.mobile-menu-btn span {
+  width: 25px;
+  height: 2px;
+  background-color: var(--dark);
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    order: 2;
+  }
+
+  .nav-center {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+  }
+
+  .nav-center.active {
+    display: flex;
+  }
+
+  .actions {
+    order: 3;
+  }
+  
+  .cart-label {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .button-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-section a, .button-section button {
+    width: 100%;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .hero img {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .features-grid, .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .features-grid, .testimonials-grid, .cta-benefits {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
