@@ -11,6 +11,11 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   font-family: "Inter", sans-serif;
   color: var(--text-light);
@@ -78,6 +83,11 @@ body {
   border-bottom: 1px solid rgba(254, 243, 198, 1);
   height: 80px;
   background: rgba(255, 255, 255, 0.95);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .nav-center {
@@ -934,6 +944,10 @@ header p {
     justify-content: space-between;
     padding: 0 20px;
     position: relative;
+    max-height: calc(100vh - 80px); 
+    overflow-y: auto;
+    top: 0px;
+    position: sticky;
   }
 
   .nav-center {
