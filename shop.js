@@ -1,12 +1,37 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function updateCartCount() {
-  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const badge = document.getElementById("cartBadge");
-  
-  if (badge) {
-    badge.innerText = count;
-    badge.style.display = count > 0 ? "block" : "none";
+async function fetchProducts() {
+  const productContainer = document.getElementById("productGrid");
+  if (!productContainer) return;
+
+  try {
+    const response = await fetch('https://fakestoreapi.com/products/?limit=9'); // Limit to 8 items
+    const products = await response.json();
+    console.log("Fetched Products:", products);
+
+    productContainer.innerHTML = "";
+    
+    products.forEach(product => {
+      // Map API data to your luxury design
+      productContainer.innerHTML += `
+        <div class="product">
+          <img src="${product.image}" alt="${product.title}">
+          <div class="product-content">
+            <h3>${product.title}</h3>
+            <p>${product.description.substring(0, 100)}...</p>
+            <div class="product-foot">
+              <div class="price">$${product.price}</div>
+              <button type="button" onclick="addToCart('${product.title.replace(/'/g, "\\'")}', ${product.price}, this)">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  } catch (error) {
+    productContainer.innerHTML = "<p>Failed to load products. Please try again later.</p>";
+    console.error("API Error:", error);
   }
 }
 
@@ -39,6 +64,16 @@ function addToCart(name, price, buttonElement) {
   }
 }
 
+function updateCartCount() {
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const badge = document.getElementById("cartBadge");
+  
+  if (badge) {
+    badge.innerText = count;
+    badge.style.display = count > 0 ? "block" : "none";
+  }
+}
+
 function updateQuantity(name, delta) {
   const item = cart.find(i => i.name === name);
   if (item) {
@@ -54,7 +89,7 @@ function updateQuantity(name, delta) {
 function saveAndUpdate() {
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
-}
+} 
 
 function goToCheckout() {
   if (cart.length === 0) {
@@ -165,4 +200,7 @@ function processCheckout(e) {
   }, 2000);
 }
 
-updateCartCount();
+document.addEventListener("DOMContentLoaded", () => {
+  fetchProducts();
+  updateCartCount();
+})
